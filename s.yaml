@@ -1,0 +1,34 @@
+edition: 3.0.0
+name: zmirror-app
+access: 'undefined'
+vars:
+  region: 'cn-hangzhou'
+  functionName: 'zmirror-ya38'
+
+resources:
+  zmirror:
+    component: fc3
+    props:
+      region: ${vars.region}
+      description: Serverless Devs Web Framework Function Zmirror
+      runtime: custom.debian10
+      timeout: 60
+      code: ./code
+      customRuntimeConfig:
+        args:
+          - '-u'
+          - index.py
+        port: 9000
+        command:
+          - python3
+      functionName: ${vars.functionName}
+  fc3_domain_0:
+    component: fc3-domain
+    props:
+      region:  ${vars.region}
+      domainName: auto
+      protocol: HTTP
+      routeConfig:
+        routes:
+          - path: /*
+            functionName: ${vars.functionName}
