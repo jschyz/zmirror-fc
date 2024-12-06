@@ -22,7 +22,7 @@ resources:
       customRuntimeConfig:
         args:
           - '-u'
-          - index.py
+          - wsgi.py
         port: 9000
         command:
           - python3
