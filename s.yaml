@@ -21,12 +21,8 @@ resources:
       timeout: 60
       code: ./code
       customRuntimeConfig:
-        args:
-          - '-u'
-          - wsgi.py
-        port: 9000
         command:
-          - python3
+          - ./bootstrap
       functionName: ${vars.functionName}
   fc3_domain_0:
     component: fc3-domain
