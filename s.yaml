@@ -14,7 +14,7 @@ resources:
       runtime: custom.debian10
       environmentVariables:
         PYTHONPATH: /opt/python
-        PATH: /opt/python/bin:PATH=/opt/python3.9/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin
+        PATH: /opt/python3.9/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/opt/python/bin
       layers:
         - acs:fc:cn-hangzhou:official:layers/Python39/versions/2
         - acs:fc:cn-hangzhou:1565187646146117:layers/zmirror-ya38-layer/versions/2
